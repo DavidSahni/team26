@@ -16,6 +16,15 @@ public class Game {
 
     public Game(){
         // initialize a new game such that each column can store cards
+    	for(int i = 0; i<4; i++){
+    	    cols.add(new ArrayList());
+        }
+        /*testing
+        this.cols.get(0).add(new Card(5,Suit.Clubs));
+        this.cols.get(1).add(new Card(11, Suit.Diamonds));
+        this.cols.get(2).add(new Card(2,Suit.Spades));
+        this.cols.get(3).add(new Card(6,Suit.Hearts));
+        */
     }
 
     public void buildDeck() {
