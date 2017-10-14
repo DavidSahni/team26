@@ -38,6 +38,17 @@ public class Game {
 
     public void shuffle() {
         // shuffles the deck so that it is random
+	Random rdm = new Random();
+
+	Card temp;
+	int z;
+	for(int i=0; i<52; i++)
+	{
+		z = rdm.nextInt(52);
+		temp = deck.get(i);
+		deck.set(i, deck.get(z));
+		deck.set(z, temp);
+	}
     }
 
     public void dealFour() {
