@@ -1,19 +1,23 @@
 
 td{
-width: 255px;
+width: 15em;
 height:20px;
 text-align:center;
+}
+
+tr{
+min-width: 240px;
 }
 
 .title{
 font-weight: bold;
 }
 
+
 .cardLocation{
 height: 35px;
 max-height: 35px;
-minimum-width: 25%;
-background-color:#F0F0F0;
+background-color: #F0F0F0;
 border: 1px solid black
 }
 
@@ -26,16 +30,17 @@ width: 100%;
 
 .columnOfCards{
     height: 100%;
-    padding-left: 2px;
-    padding-right: 2px;
-    padding-top: 1px;
+    min-width: 15em;
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-top: .5em;
 }
 
 .columnOfCards table{
+min-width: 15em;
 border-collapse: collapse;
 margin: auto;
 }
-
 
 
 .hidden{
@@ -43,8 +48,57 @@ visibility: hidden;
 }
 
 .lastCard{
-height: 300px;
+height: 21em;
+min-width: 15em;
 vertical-align: text-top;
 padding-top: 16px;
+}
+
+.deck-discard-outer{
+width:100%;
+background-color: #006600;
+overflow: hidden;
+}
+
+.deck-discard-inner{
+width: 100%;
+background-color: #006600;
+}
+
+.deck{
+width: 21em;
+height: 15em;
+background-color: #F0F0F0;
+float: right;
+margin-left: 5em;
+margin-right: 5em;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+
+.discard{
+width: 21em;
+height: 15em;
+background-color: #F0F0F0;
+float: left;
+margin-left: 5em;
+margin-right: 5em;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+
+.deck-discard-title{
+font-size: 1em;
+text-align: center;
+
+text-decoration: none;
+}
+
+.buffer{
+float: bottom;
+margin-left-right: 1em;
+padding-bottom: 1em;
+width= 100%;
+background-color: #ffffff;
 }
 

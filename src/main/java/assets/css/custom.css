@@ -1,3 +1,9 @@
 /* Add additional stylesheets below
 -------------------------------------------------- */
 
+.stretchy-wrapper{
+width: 100%;
+padding-bottom: 72.86%;
+position: relative;
+background: blue;
+}
