@@ -1,9 +1,6 @@
-tr{
-width:500px;
-}
 
 td{
-width:100px;
+width: 255px;
 height:20px;
 text-align:center;
 }
@@ -13,6 +10,41 @@ font-weight: bold;
 }
 
 .cardLocation{
-width: 100px;
+height: 35px;
+max-height: 35px;
+minimum-width: 25%;
 background-color:#F0F0F0;
+border: 1px solid black
 }
+
+#cardTable{
+background-color: #006600;
+height: 100%;
+width: 100%;
+}
+
+
+.columnOfCards{
+    height: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+}
+
+.columnOfCards table{
+border-collapse: collapse;
+margin: auto;
+}
+
+
+
+.hidden{
+visibility: hidden;
+}
+
+.lastCard{
+height: 300px;
+vertical-align: text-top;
+padding-top: 16px;
+}
+
