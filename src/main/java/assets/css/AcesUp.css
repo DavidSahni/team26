@@ -13,6 +13,14 @@ min-width: 240px;
 font-weight: bold;
 }
 
+.realTitle {
+font-weight: bold;
+text-align: center;
+color: #002800;
+font-family: arial;
+font-size: 36px;
+letter-spacing: 1px;
+text-transform: uppercase;
 
 .cardLocation{
 height: 35px;
