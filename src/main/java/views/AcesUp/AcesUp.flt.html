@@ -91,20 +91,19 @@
 
 <div class="deck-discard-outer">
     <div class="deck-discard-inner">
-        <div class="deck">
+        <div id="dealButton" class="deck">
             <h1 class="deck-discard-title">Deck</h1>
+            <h2 class="deck-discard-title">(Click to Deal 4 Cards)</h2>
         </div>
         <div class="discard">
             <h1 class="deck-discard-title">Discard</h1>
+            <h1 class="deck-discard-title">Count:</h1>
+            <p style="text-align:center" id="count"></p>
         </div>
-
         </div>
 </div>
 
 <div class="buffer">
-
-<button id="dealButton">Deal</button>
-<BR>Remove from: <button id="Remove1">Column1</button><button id="Remove2">Column2</button><button id="Remove3">Column3</button><button id="Remove4">Column4</button>
 
 <BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button>
 
@@ -152,6 +151,7 @@ var lastEle;
     });
     $( '.la3' ).removeClass( '.la3' );
  $( '#c3 .l'+lastEle ).addClass("lastCard la3");
+ $("p").html(game.removeCount);
 
 assignRemoves();
 }
