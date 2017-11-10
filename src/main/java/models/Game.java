@@ -14,10 +14,13 @@ public class Game {
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
+    //columns patch hasn't been put out yet?
+    //public java.util.List<Column> colms = new ArrayList<>();
+
     public int removeCount = 0;
 
     public Game(){
-        cols.add(new ArrayList<Card>());
+        cols.add(new ArrayList<Card>()); //colms.add(new Column())
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
@@ -28,7 +31,7 @@ public class Game {
 
     public void dealFour() {
         for(int i = 0; i < 4; i++){
-            cols.get(i).add(deck.dealTop());
+            cols.get(i).add(deck.dealTop()); //colms.get(i).addCard(deck.dealTop());
         }
     }
 
@@ -48,7 +51,7 @@ public class Game {
 
 
     public void remove(int columnNumber) {
-        if(columnHasCards(columnNumber)) {
+        if(columnHasCards(columnNumber)) { //colms.get(i).hasCards()
             Card c = getTopCard(columnNumber);
             boolean removeCard = false;
             for (int i = 0; i < 4; i++) {
@@ -71,14 +74,14 @@ public class Game {
     }
 
     private boolean columnHasCards(int columnNumber) {
-        if(this.cols.get(columnNumber).size()>0){
+        if(this.cols.get(columnNumber).size()>0){      //colms.get(i).hasCards();
             return true;
         }
         return false;
     }
 
     private Card getTopCard(int columnNumber) {
-        return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
+        return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1); //colms.get(i).getTopCard();
     }
 
 
@@ -89,10 +92,10 @@ public class Game {
     }
 
     private void addCardToCol(int columnTo, Card cardToMove) {
-        cols.get(columnTo).add(cardToMove);
+        cols.get(columnTo).add(cardToMove);  //colms.get(i).addCard(cardToMove);
     }
 
     private void removeCardFromCol(int colFrom) {
-        this.cols.get(colFrom).remove(this.cols.get(colFrom).size()-1);
+        this.cols.get(colFrom).remove(this.cols.get(colFrom).size()-1); //colms.get(i).removeTopCard();
     }
 }
