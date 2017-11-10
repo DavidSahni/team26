@@ -1,8 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
 /**
  * Assignment 1: Students must implement dealFour(), remove(), move(), and columnHasCards() methods
@@ -12,40 +10,31 @@ import java.util.Random;
  */
 public class Game {
 
-    public java.util.List<Card> deck = new ArrayList<>();
+    public Deck deck = new Deck();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
+
+    public int removeCount = 0;
 
     public Game(){
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
+        deck.init();
     }
 
-    public void buildDeck() {
-        for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
-        }
-    }
 
-    public void shuffle() {
-        long seed = System.nanoTime();
-        Collections.shuffle(deck, new Random(seed));
-    }
 
     public void dealFour() {
         for(int i = 0; i < 4; i++){
-            cols.get(i).add(deck.get(deck.size()-1));
-            deck.remove(deck.size()-1);
+            cols.get(i).add(deck.dealTop());
         }
     }
 
     //customDeal to setup game for testing purposes
-    public void customDeal(int c1, int c2, int c3, int c4) {
+    //Deprecated
+  /*  public void customDeal(int c1, int c2, int c3, int c4) {
         cols.get(0).add(deck.get(c1));
         deck.remove(c1);
         cols.get(1).add(deck.get(c2));
@@ -54,9 +43,10 @@ public class Game {
         deck.remove(c3);
         cols.get(3).add(deck.get(c4));
         deck.remove(c4);
-    }
+    }*/
 
-    public int removeCount = 0;
+
+
     public void remove(int columnNumber) {
         if(columnHasCards(columnNumber)) {
             Card c = getTopCard(columnNumber);

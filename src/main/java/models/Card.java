@@ -28,6 +28,10 @@ public class Card implements Serializable {
         return value;
     }
 
+    public static Card createCard(int val, Suit s){
+        return new Card(val, s);
+    }
+
     public String toString() {
         return this.value + this.suit.toString();
     }
