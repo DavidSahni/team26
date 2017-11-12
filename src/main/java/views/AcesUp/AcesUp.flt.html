@@ -218,7 +218,10 @@ $.ajax({
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
-        display(data);},
+        display(data);
+            if (game.validMove == false) {
+                alert("Invalid Move");
+            }},
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
