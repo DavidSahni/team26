@@ -5,22 +5,17 @@
 .title-container{
     width: 100%;
     background-color: rgba(240,240,240,.75);
-    -webkit-transition: height, background-color .5s;
-    transition: height, background-color .5s;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
     height: 70px;
 
 }
 
 .title-container:hover {
-    width: 100%;
     background-color: #000000;
-    align-self: center;
+    text-align: center;
     align: center;
-    padding-left-right: 50%;
-    height: 80px;
-
 }
-
 
 
 .game-title {
@@ -70,7 +65,22 @@ tr{
     max-height: 35px;
     background: -webkit-linear-gradient(#ffffff, #f7f4f4); /* For Safari 5.1 to 6.0 */
     box-shadow: -10px 10px #000000;
+    -webkit-transition: box-shadow, -webkit-linear-gradient, background-color, color .5s;
+    transition: -webkit-linear-gradient, color .5s;
+    transition: box-shadow, .5s;
+}
 
+.cardLocation:hover{
+    background: -webkit-linear-gradient(#000000, #000000); /* For Safari 5.1 to 6.0 */
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0px 0px rgba(0,0,0,0);
+}
+
+.cardLocation:active{
+    position: relative;
+    top: 1px;
+    color: rgba(0,0,0,0);
 }
 
 #cardTable{
