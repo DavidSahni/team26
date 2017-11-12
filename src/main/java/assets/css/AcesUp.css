@@ -1,17 +1,21 @@
+body{
+background-image: url('https://i.imgur.com/XP9daTE.png');
+background-size: cover;
+color: #000000;
+}
 
 td{
 width: 15em;
 height:20px;
 text-align:center;
+background-color: white;
 }
 
 tr{
 min-width: 240px;
 }
 
-.title{
-font-weight: bold;
-}
+
 
 .realTitle {
 font-weight: bold;
@@ -62,7 +66,7 @@ vertical-align: text-top;
 padding-top: 16px;
 }
 
-.deck-discard-outer{
+/*.deck-discard-outer{
 width:100%;
 background-color: #006600;
 overflow: hidden;
@@ -71,7 +75,7 @@ overflow: hidden;
 .deck-discard-inner{
 width: 100%;
 background-color: #006600;
-}
+}*/
 
 .deck{
 width: 21em;
@@ -96,17 +100,12 @@ margin-bottom: 1em;
 }
 
 .deck-discard-title{
-font-size: 1em;
+font-size: .5em;
 text-align: center;
-
 text-decoration: none;
 }
 
-.buffer{
-float: bottom;
-margin-left-right: 1em;
-padding-bottom: 1em;
-width= 100%;
-background-color: #ffffff;
+.deck {
+border: 2px solid black;
 }
-
+}
