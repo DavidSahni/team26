@@ -210,6 +210,9 @@ $(".la3").click(function(){
 
 
 $("#moveButton").click(function(){
+if (!(game.validMove)) {
+    alert("Invalid Move");
+}
 var colFrom = $("#from_col").val();
 var colTo = $("#to_col").val();
 $.ajax({

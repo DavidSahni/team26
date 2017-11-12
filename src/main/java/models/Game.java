@@ -19,6 +19,7 @@ public class Game {
     //public java.util.List<Column> colms = new ArrayList<>();
 
     public int removeCount = 0;
+    public boolean validMove = false;
 
     public Game(){
         cols.add(new ArrayList<Card>()); //colms.add(new Column())
@@ -89,12 +90,13 @@ public class Game {
     public void move(int columnFrom, int columnTo) {
         Card cardToMove = getTopCard(columnFrom);
         if (this.cols.get(columnTo).size() > 0) {        //if (columnTo.hadCards() == true)
-            JOptionPane.showMessageDialog(null, "Cards can only be moved to empty columns!", "alert", JOptionPane.ERROR_MESSAGE);
+            validMove = false;
         }
         else if (cardToMove.getValue() < 14) {
-            JOptionPane.showMessageDialog(null, "Only Aces can be moved to empty columns!", "alert", JOptionPane.ERROR_MESSAGE);
+            validMove = false;
         }
         else {
+            validMove = true;
             this.removeCardFromCol(columnFrom);
             this.addCardToCol(columnTo, cardToMove);
         }
