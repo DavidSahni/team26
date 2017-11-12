@@ -19,7 +19,7 @@ public class Game {
     //public java.util.List<Column> colms = new ArrayList<>();
 
     public int removeCount = 0;
-    public boolean validMove = false;
+    public boolean validMove = true;
 
     public Game(){
         cols.add(new ArrayList<Card>()); //colms.add(new Column())

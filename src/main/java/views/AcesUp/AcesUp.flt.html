@@ -210,9 +210,6 @@ $(".la3").click(function(){
 
 
 $("#moveButton").click(function(){
-if (!(game.validMove)) {
-    alert("Invalid Move");
-}
 var colFrom = $("#from_col").val();
 var colTo = $("#to_col").val();
 $.ajax({
@@ -221,7 +218,10 @@ $.ajax({
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
-        display(data);},
+        display(data);
+            if (game.validMove == false) {
+                alert("Invalid Move");
+            }},
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
