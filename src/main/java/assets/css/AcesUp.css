@@ -1,111 +1,227 @@
-body{
-background-image: url('https://i.imgur.com/XP9daTE.png');
-background-size: cover;
-color: #000000;
+.title-wrapper {
+    height: 80px;
 }
 
+.title-container{
+    width: 100%;
+    background-color: rgba(240,240,240,.75);
+    -webkit-transition: height, background-color .5s;
+    transition: height, background-color .5s;
+    height: 70px;
+
+}
+
+.title-container:hover {
+    width: 100%;
+    background-color: #000000;
+    align-self: center;
+    align: center;
+    padding-left-right: 50%;
+    height: 80px;
+
+}
+
+
+
+.game-title {
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 50px;
+    -webkit-transition: color, font-size .5s;
+    transition: color, font-size .5s;
+}
+
+.game-title:hover {
+    color: #ffffff;
+    font-size: 55px;
+
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    background-image: url('https://i.imgur.com/gm8qoQm.png');
+    background-size: cover;
+    color: #000000;
+}
+
+
 td{
-width: 15em;
-height:20px;
-text-align:center;
-background-color: white;
+    width: 120px;
+    height:20px;
+    text-align:center;
+    border: none;
 }
 
 tr{
-min-width: 240px;
+    width: 75px;
+}
+
+.table-title{
+    font-weight: bold;
+    color: rgba(0,0,0,0);
 }
 
 
-
-.realTitle {
-font-weight: bold;
-text-align: center;
-color: #002800;
-font-family: arial;
-font-size: 36px;
-letter-spacing: 1px;
-text-transform: uppercase;
-}
 .cardLocation{
-height: 35px;
-max-height: 35px;
-background-color: #F0F0F0;
-border: 1px solid black
+    height: 35px;
+    max-height: 35px;
+    background: -webkit-linear-gradient(#ffffff, #f7f4f4); /* For Safari 5.1 to 6.0 */
+    box-shadow: -10px 10px #000000;
+
 }
 
 #cardTable{
-background-color: #006600;
-height: 100%;
-width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 
 .columnOfCards{
     height: 100%;
-    min-width: 15em;
     margin-left: .5em;
     margin-right: .5em;
     margin-top: .5em;
 }
 
 .columnOfCards table{
-min-width: 15em;
-border-collapse: collapse;
-margin: auto;
+    border-collapse: collapse;
+    margin: auto;
 }
 
 
 .hidden{
-visibility: hidden;
+    visibility: hidden;
 }
 
 .lastCard{
-height: 21em;
-min-width: 15em;
-vertical-align: text-top;
-padding-top: 16px;
+    height: 270px;
+    min-width: 180px;
+    vertical-align: text-top;
+    padding-top: 16px;
 }
 
-/*.deck-discard-outer{
-width:100%;
-background-color: #006600;
-overflow: hidden;
+.deck-discard-outer{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(240,240,240,.50);
 }
 
 .deck-discard-inner{
-width: 100%;
-background-color: #006600;
-}*/
+    width: 100%;
+}
+
+.deck-and-discard{
+    width: 270px;
+    height: 180px;
+    background-color: #F0F0F0;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    -webkit-border-radius: 3px;
+    -webkit-transition: background-color, box-shadow .5s;
+    transition: background-color, box-shadow .5s;
+    color: #000000;
+    background-color: rgba(240,240,240,1);
+    box-shadow: -5px 5px #000000;
+}
+
+.deck:hover {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0px 0px rgba(0,0,0,0);
+}
+
+.deck:active {
+    position: relative;
+    top: 1px;
+}
 
 .deck{
-width: 21em;
-height: 15em;
-background-color: #F0F0F0;
-float: right;
-margin-left: 5em;
-margin-right: 5em;
-margin-top: 1em;
-margin-bottom: 1em;
+    float: right;
 }
 
 .discard{
-width: 21em;
-height: 15em;
-background-color: #F0F0F0;
-float: left;
-margin-left: 5em;
-margin-right: 5em;
-margin-top: 1em;
-margin-bottom: 1em;
+    float: left;
 }
 
 .deck-discard-title{
-font-size: .5em;
-text-align: center;
-text-decoration: none;
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 2em;
+    text-align: center;
+    text-decoration: none;
 }
 
-.deck {
-border: 2px solid black;
+.deck-discard-subtitle{
+    margin: 0px;
+    font-size: .9em;
+    text-align: center;
 }
+
+.deck-discard-subtitle, #count{
+    margin: 0px;
+    font-size: .9em;
+    text-align: center;
+}
+
+#moveButton {
+    margin-left: 1em;
+    -webkit-border-radius: 3px;
+    width: 110px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-transition: background-color, box-shadow .5s;
+    transition: background-color, box-shadow .5s;
+    color: #000000;
+    border: 5px rgba(240,240,240,.75);
+    background-color: rgba(240,240,240,1);
+    box-shadow: -5px 5px #000000;
+
+}
+
+#moveButton:hover {
+     background-color: #000000;
+     color: #ffffff;
+     border: 5px solid #000000;
+     box-shadow: 0px 0px rgba(0,0,0,0);
+}
+
+
+#moveButton:active {
+	position:relative;
+	top:1px;
+}
+
+#from_col, #to_col {
+    -webkit-border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    border: 0px solid #000000;
+    display: inline-block;
+    cursor: pointer;
+    color: #000000;
+    background-color: rgba(240,240,240,.75);
+}
+
+
+.move-container{
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.m-button-container{
+    float: right;
+    width: 50%;
+}
+
+.move-text{
+    font-size: 15px;
 }

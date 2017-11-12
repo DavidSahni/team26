@@ -1,12 +1,20 @@
-<h1 class="realTitle"> Aces Up! </h1>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+    <div class="title-wrapper"><div class="title-container"><h1 class="game-title"> Aces Up Solitaire </h1></div></div>
 
-<link href="/assets/css/AcesUp.css" rel="stylesheet">
-<script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
+    <link href="/assets/css/AcesUp.css" rel="stylesheet">
+    <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
+</head>
 
 <body>
 
+<div class="move-container">
+    <BR> Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  />  <button id="moveButton">Move</button>
+</div>
+
+
 <table id="cardTable">
-    <tr class="title">
+    <tr class="table-title">
         <td>Column 0</td>
         <td >Column 1</td>
         <td >Column 2</td>
@@ -14,24 +22,24 @@
     </tr>
 
     <tr class="cols">
-    <td class="columnOfCards" id="c0">
-        <table>
-            <tr><td class="cardLocation l0"></td></tr>
-            <tr><td class="cardLocation l1 hidden"></td></tr>
-            <tr><td class="cardLocation l2 hidden"></td></tr>
-            <tr><td class="cardLocation l3 hidden"></td></tr>
-            <tr><td class="cardLocation l4 hidden"></td></tr>
-            <tr><td class="cardLocation l5 hidden"></td></tr>
-            <tr><td class="cardLocation l6 hidden"></td></tr>
-            <tr><td class="cardLocation l7 hidden"></td></tr>
-            <tr><td class="cardLocation l8 hidden"></td></tr>
-            <tr><td class="cardLocation l9 hidden"></td></tr>
-            <tr><td class="cardLocation l10 hidden"></td></tr>
-            <tr><td class="cardLocation l11 hidden"></td></tr>
-            <tr><td class="cardLocation l12 hidden"></td></tr>
-            <tr><td class="cardLocation l13 hidden"></td></tr>
-        </table>
-    </td>
+        <td class="columnOfCards" id="c0">
+            <table>
+                <tr><td class="cardLocation l0"></td></tr>
+                <tr><td class="cardLocation l1 hidden"></td></tr>
+                <tr><td class="cardLocation l2 hidden"></td></tr>
+                <tr><td class="cardLocation l3 hidden"></td></tr>
+                <tr><td class="cardLocation l4 hidden"></td></tr>
+                <tr><td class="cardLocation l5 hidden"></td></tr>
+                <tr><td class="cardLocation l6 hidden"></td></tr>
+                <tr><td class="cardLocation l7 hidden"></td></tr>
+                <tr><td class="cardLocation l8 hidden"></td></tr>
+                <tr><td class="cardLocation l9 hidden"></td></tr>
+                <tr><td class="cardLocation l10 hidden"></td></tr>
+                <tr><td class="cardLocation l11 hidden"></td></tr>
+                <tr><td class="cardLocation l12 hidden"></td></tr>
+                <tr><td class="cardLocation l13 hidden"></td></tr>
+            </table>
+        </td>
         <td class="columnOfCards" id="c1">
             <table>
                 <tr><td class="cardLocation l0"></td></tr>
@@ -91,23 +99,19 @@
 
 <div class="deck-discard-outer">
     <div class="deck-discard-inner">
-        <div id="dealButton" class="deck">
+        <div id="dealButton" class="deck-and-discard deck">
             <h1 class="deck-discard-title">Deck</h1>
-            <h2 class="deck-discard-title">(Click to Deal 4 Cards)</h2>
+            <h2 class="deck-discard-subtitle">(Click to Deal 4 Cards)</h2>
         </div>
-        <div class="discard">
+        <div class="deck-and-discard discard">
             <h1 class="deck-discard-title">Discard</h1>
-            <h1 class="deck-discard-title">Count:</h1>
-            <p style="text-align:center" id="count"></p>
+            <h1 class="deck-discard-subtitle">Count:</h1>
+            <p class="deck-discard-subtitle" id="count"></p>
         </div>
-        </div>
+    </div>
 </div>
 
-<div class="buffer">
 
-<BR>Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /> <button id="moveButton">Move</button>
-
-</div>
 <script>
 
 var game;
