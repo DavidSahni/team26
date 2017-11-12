@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  * Assignment 1: Students must implement dealFour(), remove(), move(), and columnHasCards() methods
@@ -18,6 +19,7 @@ public class Game {
     //public java.util.List<Column> colms = new ArrayList<>();
 
     public int removeCount = 0;
+    public boolean validMove = true;
 
     public Game(){
         cols.add(new ArrayList<Card>()); //colms.add(new Column())
@@ -87,8 +89,17 @@ public class Game {
 
     public void move(int columnFrom, int columnTo) {
         Card cardToMove = getTopCard(columnFrom);
-        this.removeCardFromCol(columnFrom);
-        this.addCardToCol(columnTo,cardToMove);
+        if (this.cols.get(columnTo).size() > 0) {        //if (columnTo.hadCards() == true)
+            validMove = false;
+        }
+        else if (cardToMove.getValue() < 14) {
+            validMove = false;
+        }
+        else {
+            validMove = true;
+            this.removeCardFromCol(columnFrom);
+            this.addCardToCol(columnTo, cardToMove);
+        }
     }
 
     private void addCardToCol(int columnTo, Card cardToMove) {
