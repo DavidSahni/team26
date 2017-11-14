@@ -127,4 +127,6 @@ public class Game {
     private void removeCardFromCol(int colFrom) {
         this.cols.get(colFrom).remove(this.cols.get(colFrom).size()-1); //colms.get(i).removeTopCard();
     }
+
+
 }
