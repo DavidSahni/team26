@@ -158,6 +158,10 @@ var lastEle;
  $("p").html(game.removeCount);
 
 assignRemoves();
+
+if(userWon == true) {
+    alert("Congrats! You won!");
+}
 }
 
 // Calls ApplicationController.gameGet()
