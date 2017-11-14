@@ -20,6 +20,7 @@ public class Game {
 
     public int removeCount = 0;
     public boolean validMove = true;
+    public boolean userWon = false;
 
     public Game(){
         cols.add(new ArrayList<Card>()); //colms.add(new Column())
@@ -75,6 +76,22 @@ public class Game {
         }
     }
 
+    public boolean ifWon() {
+        int size = deck.returnDeckSize();
+        boolean flag = false;
+        if(size == 0) {
+            for(int i = 0; i < 4; i++) {
+                Card temp = getTopCard(i);
+                if (temp.getValue() != 14) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     private boolean columnHasCards(int columnNumber) {
         if(this.cols.get(columnNumber).size()>0){      //colms.get(i).hasCards();
             return true;
@@ -100,6 +117,7 @@ public class Game {
             this.removeCardFromCol(columnFrom);
             this.addCardToCol(columnTo, cardToMove);
         }
+        userWon = ifWon();
     }
 
     private void addCardToCol(int columnTo, Card cardToMove) {
