@@ -4,7 +4,7 @@
 
 .title-container{
     width: 100%;
-    background-color: rgba(240,240,240,.75);
+    background-color: rgba(240,240,240,1);
     -webkit-transition: background-color .5s;
     transition: background-color .5s;
     height: 70px;
@@ -30,7 +30,7 @@
 
 .game-title:hover {
     color: #ffffff;
-    font-size: 55px;
+    font-size: 52px;
 
 }
 
