@@ -1,7 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  * Assignment 1: Students must implement dealFour(), remove(), move(), and columnHasCards() methods
@@ -11,8 +10,10 @@ import javax.swing.JOptionPane;
  */
 public class Game {
 
-    public Deck deck = new StandardDeck();
+    //aj use this to signify what deck we are using
+    public int key = 0;
 
+    public Deck deck;
     public java.util.List<Column> cols = new ArrayList<>();
 
     //columns patch hasn't been put out yet?
@@ -23,6 +24,13 @@ public class Game {
     public boolean userWon = false;
 
     public Game(){
+        //deck maker
+        if(key == 0){
+            deck = new Deck();
+        }else{
+            deck = new SpanishDeck();
+        }
+
         cols.add(new Column(1)); //colms.add(new Column())
         cols.add(new Column(2));
         cols.add(new Column(3));
@@ -52,7 +60,7 @@ public class Game {
     }*/
 
 
-
+    //karsh the joker stuff goes in this function
     public void remove(int columnNumber) {
         if(columnHasCards(columnNumber)) { //colms.get(i).hasCards()
             Card c = getTopCard(columnNumber);
