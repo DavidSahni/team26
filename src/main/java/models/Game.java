@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class Game {
 
-    public Deck deck = new Deck();
+    public Deck deck = new StandardDeck();
 
     public java.util.List<Column> cols = new ArrayList<>();
 

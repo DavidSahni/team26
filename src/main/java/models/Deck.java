@@ -4,19 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class Deck {
+public abstract class Deck {
 
     public java.util.List<Card> deck = new ArrayList<>();
-
-    public void init() {
-        for(int i = 2; i < 15; i++){
-            deck.add(Card.createCard(i, Suit.Clubs));
-            deck.add(Card.createCard(i, Suit.Hearts));
-            deck.add(Card.createCard(i, Suit.Diamonds));
-            deck.add(Card.createCard(i, Suit.Spades));
-        }
-        shuffle();
-    }
+    public abstract void init();
 
     public void shuffle() {
         long seed = System.nanoTime();
@@ -32,5 +23,6 @@ public class Deck {
     public int returnDeckSize() {
         return deck.size();
     }
+
 
 }
