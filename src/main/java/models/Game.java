@@ -13,7 +13,7 @@ public class Game {
 
     public Deck deck = new Deck();
 
-    public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
+    public java.util.List<Column> cols = new ArrayList<>();
 
     //columns patch hasn't been put out yet?
     //public java.util.List<Column> colms = new ArrayList<>();
@@ -23,10 +23,10 @@ public class Game {
     public boolean userWon = false;
 
     public Game(){
-        cols.add(new ArrayList<Card>()); //colms.add(new Column())
-        cols.add(new ArrayList<Card>());
-        cols.add(new ArrayList<Card>());
-        cols.add(new ArrayList<Card>());
+        cols.add(new Column(1)); //colms.add(new Column())
+        cols.add(new Column(2));
+        cols.add(new Column(3));
+        cols.add(new Column(3));
         deck.init();
     }
 
@@ -34,7 +34,7 @@ public class Game {
 
     public void dealFour() {
         for(int i = 0; i < 4; i++){
-            cols.get(i).add(deck.dealTop()); //colms.get(i).addCard(deck.dealTop());
+            cols.get(i).cards.add(deck.dealTop()); //colms.get(i).addCard(deck.dealTop());
         }
     }
 
@@ -43,11 +43,11 @@ public class Game {
   /*  public void customDeal(int c1, int c2, int c3, int c4) {
         cols.get(0).add(deck.get(c1));
         deck.remove(c1);
-        cols.get(1).add(deck.get(c2));
+        cols.get(1).cards.add(deck.get(c2));
         deck.remove(c2);
-        cols.get(2).add(deck.get(c3));
+        cols.get(2).cards.add(deck.get(c3));
         deck.remove(c3);
-        cols.get(3).add(deck.get(c4));
+        cols.get(3).cards.add(deck.get(c4));
         deck.remove(c4);
     }*/
 
@@ -71,7 +71,7 @@ public class Game {
             }
             if (removeCard) {
                 removeCount++;
-                this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
+                this.cols.get(columnNumber).cards.remove(this.cols.get(columnNumber).cards.size() - 1);
             }
         }
     }
@@ -93,20 +93,20 @@ public class Game {
     }
 
     private boolean columnHasCards(int columnNumber) {
-        if(this.cols.get(columnNumber).size()>0){      //colms.get(i).hasCards();
+        if(this.cols.get(columnNumber).cards.size()>0){      //colms.get(i).hasCards();
             return true;
         }
         return false;
     }
 
     private Card getTopCard(int columnNumber) {
-        return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1); //colms.get(i).getTopCard();
+        return this.cols.get(columnNumber).cards.get(this.cols.get(columnNumber).cards.size()-1); //colms.get(i).getTopCard();
     }
 
 
     public void move(int columnFrom, int columnTo) {
         Card cardToMove = getTopCard(columnFrom);
-        if (this.cols.get(columnTo).size() > 0) {        //if (columnTo.hadCards() == true)
+        if (this.cols.get(columnTo).cards.size() > 0) {        //if (columnTo.hadCards() == true)
             validMove = false;
         }
         else if (cardToMove.getValue() < 14) {
@@ -121,11 +121,11 @@ public class Game {
     }
 
     private void addCardToCol(int columnTo, Card cardToMove) {
-        cols.get(columnTo).add(cardToMove);  //colms.get(i).addCard(cardToMove);
+        cols.get(columnTo).cards.add(cardToMove);  //colms.get(i).addCard(cardToMove);
     }
 
     private void removeCardFromCol(int colFrom) {
-        this.cols.get(colFrom).remove(this.cols.get(colFrom).size()-1); //colms.get(i).removeTopCard();
+        this.cols.get(colFrom).cards.remove(this.cols.get(colFrom).cards.size()-1); //colms.get(i).removeTopCard();
     }
 
 
