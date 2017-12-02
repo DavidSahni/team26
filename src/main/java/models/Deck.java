@@ -24,13 +24,18 @@ public class Deck {
     }
 
     public Card dealTop(){
-        Card ret = deck.get(deck.size() - 1);
-        deck.remove(deck.size() - 1);
-        return ret;
+        if(deck.size() > 0) {
+            Card ret = deck.get(deck.size() - 1);
+            deck.remove(deck.size() - 1);
+            return ret;
+        }else{
+            return null;
+        }
     }
 
     public int returnDeckSize() {
         return deck.size();
     }
+
 
 }
