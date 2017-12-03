@@ -8,15 +8,17 @@ public class testDeck {
 
     @Test
     public void testInit(){
-        Deck d = new Deck;
-        assertEquals(56,d.returnDeckSize());
+        Deck d = new Deck();
+        d.init();
+        assertEquals(52,d.returnDeckSize());
     }
 
     @Test
     public void testDealTop(){
-        Deck d = new Deck;
+        Deck d = new Deck();
+        d.init();
         Card c = d.dealTop();
-        assertEquals(55,d.returnDeckSize());
+        assertEquals(51,d.returnDeckSize());
     }
 
 
