@@ -165,10 +165,12 @@ if(game.userWon == true) {
 }
 
 // Calls ApplicationController.gameGet()
-$.getJSON("http://localhost:8080/game", function( data ) {
+function gameStart(key){
+$.getJSON("http://localhost:8080/game/"+key, function( data ) {
 display(data);
 game = data;
 });
+}
 
 
 $("#dealButton").click(function(){
@@ -234,6 +236,8 @@ $.ajax({
   dataType:"json",
 });
 });
+
+gameStart(0);
 
 
 </script>
