@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Game {
 
     //aj use this to signify what deck we are using
-    public int key = 0;
+    public int key = 1;
 
     public Deck deck;
     public java.util.List<Column> cols = new ArrayList<>();
@@ -30,11 +30,10 @@ public class Game {
         }else{
             deck = new SpanishDeck();
         }
+        for(int i = 1; i < 5; i++) {
+            cols.add(new Column(i)); //colms.add(new Column())
 
-        cols.add(new Column(1)); //colms.add(new Column())
-        cols.add(new Column(2));
-        cols.add(new Column(3));
-        cols.add(new Column(3));
+        }
         deck.init();
     }
 
@@ -65,6 +64,8 @@ public class Game {
         if(columnHasCards(columnNumber)) { //colms.get(i).hasCards()
             Card c = getTopCard(columnNumber);
             boolean removeCard = false;
+            boolean isJoker = false;
+            int jokerCol = 0;
             for (int i = 0; i < 4; i++) {
                 if (i != columnNumber) {
                     if (columnHasCards(i)) {
@@ -74,12 +75,23 @@ public class Game {
                                 removeCard = true;
                             }
                         }
+                        else if (key != 0) {
+                            if (compare.getValue() == 14) {
+                                removeCard = true;
+                                isJoker = true;
+                                jokerCol = i;
+                            }
+                        }
                     }
                 }
             }
             if (removeCard) {
                 removeCount++;
                 this.cols.get(columnNumber).cards.remove(this.cols.get(columnNumber).cards.size() - 1);
+                if (isJoker) {
+                    removeCount++;
+                    this.cols.get(jokerCol).cards.remove(this.cols.get(jokerCol).cards.size() - 1);
+                }
             }
         }
     }
@@ -88,10 +100,20 @@ public class Game {
         int size = deck.returnDeckSize();
         boolean flag = false;
         if(size == 0) {
-            for(int i = 0; i < 4; i++) {
-                Card temp = getTopCard(i);
-                if (temp.getValue() != 14) {
-                    return false;
+            if (key == 0) {
+                for(int i = 0; i < 4; i++) {
+                    Card temp = getTopCard(i);
+                    if (temp.getValue() != 14) {
+                        return false;
+                    }
+                }
+            }
+            else {
+                for(int i = 0; i < 4; i++) {
+                    Card temp = getTopCard(i);
+                    if (temp.getValue() != 13) {
+                        return false;
+                    }
                 }
             }
             return true;
@@ -114,18 +136,34 @@ public class Game {
 
     public void move(int columnFrom, int columnTo) {
         Card cardToMove = getTopCard(columnFrom);
-        if (this.cols.get(columnTo).cards.size() > 0) {        //if (columnTo.hadCards() == true)
-            validMove = false;
-        }
-        else if (cardToMove.getValue() < 14) {
-            validMove = false;
+        if (key == 0) {
+            if (this.cols.get(columnTo).cards.size() > 0) {        //if (columnTo.hadCards() == true)
+                validMove = false;
+            }
+            else if (cardToMove.getValue() < 14) {
+                validMove = false;
+            }
+            else {
+                validMove = true;
+                this.removeCardFromCol(columnFrom);
+                this.addCardToCol(columnTo, cardToMove);
+            }
+            userWon = ifWon();
         }
         else {
-            validMove = true;
-            this.removeCardFromCol(columnFrom);
-            this.addCardToCol(columnTo, cardToMove);
+            if (this.cols.get(columnTo).cards.size() > 0) {        //if (columnTo.hadCards() == true)
+                validMove = false;
+            }
+            else if (cardToMove.getValue() != 13) {
+                validMove = false;
+            }
+            else {
+                validMove = true;
+                this.removeCardFromCol(columnFrom);
+                this.addCardToCol(columnTo, cardToMove);
+            }
+            userWon = ifWon();
         }
-        userWon = ifWon();
     }
 
     private void addCardToCol(int columnTo, Card cardToMove) {
