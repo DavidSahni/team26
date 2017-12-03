@@ -7,7 +7,9 @@ import static org.junit.Assert.*;
 public class testSpanishDeck {
     @Test
     public void testifSpanish(){
-        assertEquals(true, isSpanishDeck);
+        SpanishDeck de = new SpanishDeck;
+        de.init();
+        assertEquals(true, de.isSpanishDeck);
     }
 
     @Test
