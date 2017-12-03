@@ -24,7 +24,15 @@ public class Game {
     public boolean userWon = false;
 
     public Game(){
+        cols.add(new Column(1)); //colms.add(new Column())
+        cols.add(new Column(2));
+        cols.add(new Column(3));
+        cols.add(new Column(3));
+    }
+
+    public void init(int key){
         //deck maker
+        this.key = key;
         if(key == 0){
             deck = new Deck();
         }else{
@@ -32,7 +40,6 @@ public class Game {
         }
         for(int i = 1; i < 5; i++) {
             cols.add(new Column(i)); //colms.add(new Column())
-
         }
         deck.init();
     }

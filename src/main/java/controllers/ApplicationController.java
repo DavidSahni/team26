@@ -31,8 +31,9 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
     
-    public Result gameGet(){
+    public Result gameGet(@PathParam("key") int key){
         Game g = new Game();
+        g.init(key);
         g.dealFour();
         return Results.json().render(g);
     }
