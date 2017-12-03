@@ -11,16 +11,19 @@ public class testSuit {
         assertEquals("13Bastos",c.toString());
     }
 
+    @Test
     public void testOros(){
         Card c = new Card(13, Suit.Oros);
         assertEquals("13Oros",c.toString());
     }
 
+    @Test
     public void testCopas(){
         Card c = new Card(13, Suit.Copas);
         assertEquals("13Copas",c.toString());
     }
 
+    @Test
     public void testEspadas(){
         Card c = new Card(13, Suit.Espadas);
         assertEquals("13Espadas",c.toString());

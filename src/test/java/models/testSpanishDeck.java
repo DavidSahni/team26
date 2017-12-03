@@ -10,17 +10,22 @@ public class testSpanishDeck {
         assertEquals(true, isSpanishDeck);
     }
 
+    @Test
     public void testSpanishDeckSize(){
-        Deck de = new Deck;
+        SpanishDeck de = new SpanishDeck;
+        de.init();
         assertEquals(50, de.returnDeckSize());
     }
 
+    @Test
     public void testSpanishDealTop(){
-        Deck de = new Deck;
+        SpanishDeck de = new SpanishDeck;
+        de.init();
         Card c = de.dealTop();
         assertEquals(49,de.returnDeckSize());
     }
 
+    @Test
     public void testJoker(){
         Card ce = new Card(14, Suit.Comodines);
         assertEquals("14Comodines",ce.toString());
