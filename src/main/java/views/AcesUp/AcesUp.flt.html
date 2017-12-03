@@ -12,6 +12,9 @@
     <BR> Move from column <input type="text" id="from_col"  /> to <input type="text" id="to_col"  />  <button id="moveButton">Move</button>
 </div>
 
+<div class="deck-change-container">
+    <button id="deckButton">Spanish Deck</button>
+</div>
 
 <table id="cardTable">
     <tr class="table-title">
@@ -235,6 +238,10 @@ $.ajax({
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
+});
+
+$("#deckButton").click(function() {
+gameStart(1);
 });
 
 gameStart(0);
