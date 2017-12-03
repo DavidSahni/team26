@@ -80,6 +80,8 @@ public class Game {
                         if (compare.getSuit() == c.getSuit()) {
                             if (compare.getValue() > c.getValue()) {
                                 removeCard = true;
+                                isJoker = false;
+                                break;
                             }
                         }
                         else if (key != 0) {
@@ -118,7 +120,7 @@ public class Game {
             else {
                 for(int i = 0; i < 4; i++) {
                     Card temp = getTopCard(i);
-                    if (temp.getValue() != 13) {
+                    if (temp.getValue() != 12) {
                         return false;
                     }
                 }
@@ -161,7 +163,7 @@ public class Game {
             if (this.cols.get(columnTo).cards.size() > 0) {        //if (columnTo.hadCards() == true)
                 validMove = false;
             }
-            else if (cardToMove.getValue() != 13) {
+            else if (cardToMove.getValue() != 12) {
                 validMove = false;
             }
             else {
