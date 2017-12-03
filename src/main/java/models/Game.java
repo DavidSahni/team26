@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Game {
 
     //aj use this to signify what deck we are using
-    public int key = 1;
+    public int key = 0;
 
     public Deck deck;
     public java.util.List<Column> cols = new ArrayList<>();
