@@ -105,6 +105,9 @@ public class Game {
     }
 
     private boolean columnHasCards(int columnNumber) {
+        if(this.cols.size() <= columnNumber){
+            return false;
+        }
         if(this.cols.get(columnNumber).cards.size()>0){      //colms.get(i).hasCards();
             return true;
         }

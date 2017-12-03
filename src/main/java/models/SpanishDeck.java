@@ -15,7 +15,10 @@ public class SpanishDeck extends Deck {
        deck.add(Card.createCard(14, Suit.Comodines));
        deck.add(Card.createCard(14, Suit.Comodines));
        shuffle();
-;    }
+       isSpanishDeck = true; //testing purposes
+    }
+
+
 
 
 

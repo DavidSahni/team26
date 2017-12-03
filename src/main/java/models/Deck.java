@@ -37,5 +37,7 @@ public class Deck {
         return deck.size();
     }
 
+    public boolean isSpanishDeck = false; //testing purposes
+
 
 }
