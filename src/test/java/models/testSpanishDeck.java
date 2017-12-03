@@ -7,20 +7,27 @@ import static org.junit.Assert.*;
 public class testSpanishDeck {
     @Test
     public void testifSpanish(){
-        assertEquals(true, isSpanishDeck);
+        SpanishDeck de = new SpanishDeck();
+        de.init();
+        assertEquals(true, de.isSpanishDeck);
     }
 
+    @Test
     public void testSpanishDeckSize(){
-        Deck de = new Deck;
+        SpanishDeck de = new SpanishDeck();
+        de.init();
         assertEquals(50, de.returnDeckSize());
     }
 
+    @Test
     public void testSpanishDealTop(){
-        Deck de = new Deck;
+        SpanishDeck de = new SpanishDeck();
+        de.init();
         Card c = de.dealTop();
         assertEquals(49,de.returnDeckSize());
     }
 
+    @Test
     public void testJoker(){
         Card ce = new Card(14, Suit.Comodines);
         assertEquals("14Comodines",ce.toString());
